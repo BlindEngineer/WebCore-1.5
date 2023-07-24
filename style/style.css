@@ -1,0 +1,277 @@
+@font-face {
+    font-family: "TT Lakes";
+    font-style: normal;
+    font-weight: 400;
+    src: local("TT Lakes"),
+    url("../fonts/TTLakes-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "TT Lakes";
+    font-style: normal;
+    font-weight: 500;
+    src: local("TT Lakes"),
+    url("../fonts/TTLakes-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "TT Lakes";
+    font-style: normal;
+    font-weight: 700;
+    src: local("TT Lakes"),
+    url("../fonts/TTLakes-Bold.woff") format("woff");
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    font-family: "TT Lakes", sans-serif;
+    background-color: #F8F8F8;
+}
+
+.wrapper {
+    /*max-width: 1400px;*/
+    margin: 0 auto;
+}
+
+.firm-header {
+    background: linear-gradient(90deg, #F8F8F8 0%, #FFF 100%);
+}
+
+.firm-header__title {
+    color: #7E7E82;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    padding: 16px;
+}
+
+.brand-part {
+    padding: 16px 16px 0;
+}
+
+
+/*для слайдера*/
+.brand-slider {
+    margin-left: -16px;
+    margin-right: -16px;
+overflow-x: visible;
+    padding-bottom: 34px;
+    position: relative;
+}
+
+.brand-slider::after {
+    position: absolute;
+    display: block;
+    z-index: 15;
+    background: linear-gradient(270deg, #F8F8F8 0.04%, rgba(248, 248, 248, 0.00) 100%);
+
+    width: 24px;
+    height: 80px;
+    right: 0;
+    top: -4px;
+    content: '';
+}
+
+.brand-slider__swiper {
+}
+
+.brand-slider__swiper-wrapper {
+    padding-bottom: 12px;
+}
+
+.brand-slider__swiper-slide {
+    padding-left: 16px;
+    width: 240px;
+}
+
+.brand-slider__swiper-slide:last-child {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 240px;
+}
+
+.brand-slider__pagination {
+    position: static;
+}
+
+.swiper-pagination-bullet {
+    background-color: #DDDDDD;
+    height: 12px;
+    width: 12px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color:#B5B6BC;
+}
+/*для слайдера - конец*/
+
+
+.brand-static {
+display: none;
+}
+
+.brand-card {
+    width: 240px;
+    /*height: 72px;*/
+    border-radius: 6px;
+    border: 1px solid #EAEAEA;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.brand-card--for-slider {
+    width: 206px;
+}
+
+
+.brand-card__logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.brand-card__logo {
+    max-height: 40px;
+    max-width: 128px;
+}
+
+
+.brand-card__link {
+}
+
+.round-button {
+    display: flex;
+    border: none;
+    background-color: transparent;
+    height: 40px;
+    color: #1B1C21;
+    font-family: TT Lakes, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: -0.2px;
+    /*gap: 8px;*/
+}
+
+
+
+
+/*and (max-width: 1119px)*/
+@media (min-width: 768px) {
+
+    .firm-header__title {
+        padding-left: 24px;
+    }
+
+    .brand-slider {
+        display: none;
+    }
+
+    .brand-part {
+        padding: 24px 24px 0;
+    }
+
+    .brand-static {
+        display: block;
+    }
+
+    .brand-static__wrapper {
+        display: flex;
+        padding-bottom: 24px;
+        flex-wrap: wrap;
+        row-gap: 16px;
+        column-gap: 24px;
+        justify-content: left;
+        max-height: 180px;
+        overflow: hidden;
+        transition:max-height 300ms ease-in;
+    }
+
+    .brand-card {
+        width: 224px;
+    }
+
+    .brand-static__show-button {
+        font-family: "TT Lakes", sans-serif;
+        color: #1B1C21;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        border: none;
+        background-color: transparent;
+        margin-left: 32px;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        transition:margin 300ms ease-in;
+    }
+
+    .brand-static__show-button::before {
+        position: absolute;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        left: -32px;
+        border-radius: 4px;
+        content: url(../image/expand.svg);
+        transition: transform 300ms ease-in;
+
+    }
+
+    .brand-static__wrapper--full {
+        max-height: 700px;
+    }
+
+    .brand-static__show-button--showed::before {
+        transform: rotate(180deg);
+    }
+
+    .brand-static__show-button--showed{
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+@media (min-width: 1120px) {
+
+    .firm-header__title {
+        padding-left: 32px;
+    }
+
+    .brand-slider {
+        display: none;
+    }
+
+    .brand-part {
+        padding: 24px 32px 0;
+    }
+
+    .brand-static {
+        display: block;
+    }
+
+    .brand-static__wrapper {
+        column-gap: 32px;
+    }
+
+    .brand-card {
+        width: 240px;
+    }
+}
